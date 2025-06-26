@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TutorialPointStudentFormTest {
 
@@ -45,9 +46,11 @@ public class TutorialPointStudentFormTest {
 
     @Then("Radiobutton male je zaskrtnute")
     public void radiobuttonMaleJeZaskrtnute() {
+        assertTrue(ovladac.findElement(By.id("gender")).isSelected());
     }
 
     @Then("Radiobutton male je odskrtnuty")
     public void radiobuttonMaleJeOdskrtnuty() {
+        assertFalse(ovladac.findElement(By.id("gender")).isSelected());
     }
 }
