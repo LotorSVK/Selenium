@@ -35,7 +35,12 @@ public class TutorialPointStudentFormTest {
 
     @And("Uzivatel klikne na pohlavi {string}")
     public void uzivatelKlikneNaPohlavi(String pohlavi) {
-        ovladac.findElement(By.id("gender")).click();
+        if (pohlavi.equals("male")){
+            ovladac.findElement(By.id("gender")).click();
+        } else if (pohlavi.equals("female")) {
+            ovladac.findElement(By.xpath("//*[@id=\"practiceForm\"]/div[3]/div/div/div[2]/input")).click();
+        }
+
     }
 
     @Then("Radiobutton male je zaskrtnute")
