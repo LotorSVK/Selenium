@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -38,8 +39,11 @@ public class SelTestTutorialpointCheck {
         ovladac.findElement(By.id("c_bf_1")).click();
         ovladac.findElement(By.id("c_bf_2")).click();
 
-
         assertTrue(ovladac.findElement(By.id("c_bs_1")).isSelected());
+
+        ovladac.findElement(By.id("c_bf_1")).click();
+
+        assertFalse(ovladac.findElement(By.id("c_bs_1")).isSelected());
 
     }
 
