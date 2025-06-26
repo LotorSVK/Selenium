@@ -4,7 +4,7 @@ Feature: TutorialPointStudentForm
     Given Uzivatel je na stranke tutorial point student form
     When Uzivatel zada sve jmeno "Honza"
     And Uzivatel zada svoj email "email@email.com"
-    And Uzivatel klikne na pohlavie male
+    And Uzivatel klikne na pohlavi "male"
     Then Radiobutton male je zaskrtnute
-    When Uzivatel klikne na pohlavie female
-    Then Radiobutton male je odskrtnute
+    When Uzivatel klikne na pohlavi "female"
+    Then Radiobutton male je odskrtnuty
